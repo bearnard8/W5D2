@@ -40,3 +40,11 @@ footer {
     font-size: small;
     text-align: center;
 }
+
+.link-mod {
+    color: violet;
+}
+
+.images-visibility {
+    visibility: hidden;
+}

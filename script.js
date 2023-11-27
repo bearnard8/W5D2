@@ -18,21 +18,36 @@
 // ESERCIZIO 8: Scrivi una funzione per cambiare il colore di background della pagina
 // ESERCIZIO 9: Scrivi una funzione per cambiare l'indirizzo presente nel futuro in un altro, fittizio
 // ESERCIZIO 10: Scrivi una funzione per aggiungere una classe CSS ad ogni link Amazon della tabella
-// ESERCIZIO 11: Scrivi una funzione per aggiungere/togliere una classe CSS a tutte le immagini della tabella; questa classe deve modificare la visibilità/invisibilità dell'immagine
-// ESERCIZIO 12: Scrivi una funzione per cambiare il colore del prezzo di ogni prodotto in uno differente, ogni volta che viene invocata
+// ESERCIZIO 11: Scrivi una funzione per aggiungere/togliere una classe CSS a tutte le immagini 
+//               della tabella; questa classe deve modificare la visibilità/invisibilità dell'immagine
+// ESERCIZIO 12: Scrivi una funzione per cambiare il colore del prezzo di ogni prodotto in uno differente, 
+//               ogni volta che viene invocata
 
 
-let myTitle = document.getElementById("title");
-myTitle.innerText = "Acquisti convenienti e veloci";
+function changeTitle() {
+    let myTitle = document.getElementById("title");
+    myTitle.innerText = "Acquisti convenienti e veloci";
+}
 
-document.body.style.backgroundColor = "cyan";
+function changeBackgroundColor() {
+    document.body.style.backgroundColor = "cyan";
+}
 
-let myAddress = document.getElementById("address");
-myAddress.innerText = "di Stefano Bernardo in viale Carlo Canepa, 41 - Milano (MI)";
+function changeAddress() {
+    let myAddress = document.getElementById("address");
+    myAddress.innerText = "di Stefano Bernardo in viale Carlo Canepa, 41 - Milano (MI)";
+}
 
-let amazonLinks = document.getElementsByClassName("amazon-link");
-let linkClass = amazonLinks.classList;
-console.log(linkClass);
-//amazonLinks.classList.add("shopping");
+function linkClasses () {
+    let amazonLinks = document.getElementsByClassName("amazon-link");
+    for (i = 0; i < amazonLinks.length; i++) {
+        amazonLinks[i].classList.add("link-mod");
+    }
+}
 
-//document.getElementsByClassName("amazon-link").classList.add("shopping");
+function imagesVisibility() {
+    let images = document.getElementsByTagName("img");
+    for (i = 0; i < images.length; i++) {
+        images[i].classList.toggle("images-visibility");
+    }
+}
